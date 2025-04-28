@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content=" with=device-width , initial-scale=1.0">
+    <title>Shalom english school</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="heading">
+        <a href="index.html"><img src="imasha/logodemo.png" width="100px" height="100px">
+        </a>
+        <h1 >SHALOM ENGLISH SCHOOL,CHOTAHATTA</h1>
+        
+    </div>
+    <section class="founder_head">
+        <nav>
+            <!-- <a href="index.html"><img src="imasha/logodemo.png" width="100px" height="100px"> -->
+            <!-- </a> -->
+             <div class="navlinks" id="navliinks">
+                  <i class="fa fa-times"  onclick="hideMenu()"></i>
+                <ul>
+                    <!-- <i class="fa fa-times"  onclick="hideMenu()"></i> -->
+                    <!-- <i class="fa fa-times"></i> -->
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a>
+                    <ul class="dropdown" style="font-size: 10px;">
+                        <li><a>FOUNDER</a></li>
+                        <li><a>SCHOOL</a></li>
+                        <li><a>HISTORY</a></li>
+                        <li><a>FOUNDER'S MESSAGE</a></li>
+                        <li><a>VIVISON AND MISSION</a></li>
+                        <li><a>CONTACT</a></li>
+                        <li><a>GOVERNING BODY</a></li>
+                    </ul>
+                </li>
+                    <li><a href="">ADMISSION</a>
+                        <ul class="dropdown">
+                            <li><a>admit your ward</a></li>
+                            <li><a>admission</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">PAYMENT OF FEES</a></li>
+                    <li><a href="">ALUMNI</a>
+                        <ul class="dropdown">
+                            <li><a>Donation</a></li>
+                            <li><a>Register as an alumni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">ACADEMIC</a></li>
+                    <li><a href="">LOG IN</a></li>      
+                </ul>
+            </div>
+            
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <!-- <img src="imasha/banner.jpg" class="firstslide"> -->
+        
+           
+         
+          
+       
+
+    </section>
+    
+   
+    <section class="Govbody">   
+        <h1>Meet our governing body</h1>
+        <p>Meet the governing body of our school</p> 
+        <div class="rowgov">
+            <div class="colgov">
+            <h3>Name of the faculty</h3>
+            <p> description about the faculty</p>
+        </div>
+            <div class="colgov">
+                <img src="imasha/demophoto1.jpg" >
+            </div>
+            
+            </div>
+        </div>
+        <div class="rowgov">
+            <div class="colgov">
+            <h3>Name of the faculty</h3>
+            <p> description about the faculty</p>
+        </div>
+            <div class="colgov">
+                <img src="imasha/demophoto1.jpg" >
+            </div>
+            
+            </div>
+        </div>
+        <div class="rowgov">
+            <div class="colgov">
+            <h3>Name of the faculty</h3>
+            <p> description about the faculty</p>
+        </div>
+            <div class="colgov">
+                <img src="imasha/demophoto1.jpg" >
+            </div>
+            
+            </div>
+        </div>
+        </section>
+        <!-- -----------------------------------------payment-------------------------------------- -->
+        <section class="payment">
+            <h1>Make your payment here =></h1>
+            <a href=""><img src="imasha/sl_033122_49420_23.jpg"></a>
+        </section>
+        <!-- --------------------------------------------------footer----------------------------------- -->
+        <section class="footer">
+            <div class="rowfooter">
+                <div class="footercol">
+             <ul>
+                <li>Glimpses</li>
+                <li>Contact us</li>
+             </ul>
+                </div>
+                 <div class="footercol">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3552.305113697604!2d88.103027!3d27.0836738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e5d530cd862f19%3A0xcb84d3a2f62e6aa1!2sSHALOM%20ENGLISH%20SCHOOL!5e0!3m2!1sen!2sin!4v1741622468785!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               </div>
+               <div class="footercol">
+                 <h3>our address</h3>
+                 <p>Shalom english school
+                    chotahatta, darjeeling
+                 </p>
+               </div>
+            </div>
+
+        </section>
+    <!-- -------------------------JAVASCRIPT FOR TOGGLE MENU-------------------------- -->
+    <script> 
+    var navliinks = document.getElementById("navliinks")
+    function showMenu(){
+        navliinks.style.right ="0";
+
+    }
+    function hideMenu(){
+        navliinks.style.right ="-200px";
+    }
+
+    </script>
+    <script>
+        var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1} 
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 6000); // Change image every 5 seconds
+}
+
+    </script>
+</body>
+</html>
