@@ -21,4 +21,16 @@ from school import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"), 
+    path('founder/', views.founder_page, name="founder"), 
+    path('gallery/', views.gallery, name="gallery"), 
+    path('alumni/', views.alumni, name="alumni"), 
+    path('payment/', views.payment, name="payment"), 
+    path('governing/', views.govern, name="govern"), 
+    path('contact/', views.contact, name="contact"), 
+    path('Rules&Regulations/', views.rules, name="rules"), 
+    path('login/', views.login, name="login"), 
+    path('calender/', views.calender, name="calender"), 
+    path('Vision&Mission/', views.views, name="views"), 
+    path('StudentOfTheYear/', views.soty, name="soty"), 
+    path('admissionform/', views.admission, name="admission"), 
 ]

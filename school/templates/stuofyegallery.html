@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content=" with=device-width , initial-scale=1.0">
     <title>Shalom english school</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
@@ -11,120 +12,126 @@
 </head>
 <body>
     <div class="heading">
-        <a href="index.html"><img src="imasha/SES ACTUAL NEW LOGO.png" width="100px" height="100px">        </a>
+      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" width="100px" height="100px">        </a>
         <h1 >SHALOM ENGLISH SCHOOL,CHOTAHATTA</h1>
         
     </div>
-    <section class="founder_head">
-        <nav>
-            <!-- <a href="index.html"><img src="imasha/logodemo.png" width="100px" height="100px"> -->
-            <!-- </a> -->
-             <div class="navlinks" id="navliinks">
-                  <i class="fa fa-times"  onclick="hideMenu()"></i>
-                <ul>
-                    <!-- <i class="fa fa-times"  onclick="hideMenu()"></i> -->
-                    <!-- <i class="fa fa-times"></i> -->
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ABOUT</a>
-                    <ul class="dropdown" style="font-size: 10px;">
-                        <li><a>FOUNDER</a></li>
-                        <li><a>SCHOOL</a></li>
-                        <li><a>HISTORY</a></li>
-                        <li><a>FOUNDER'S MESSAGE</a></li>
-                        <li><a>VIVISON AND MISSION</a></li>
-                        <li><a>CONTACT</a></li>
-                        <li><a>GOVERNING BODY</a></li>
-                    </ul>
-                </li>
-                    <li><a href="">ADMISSION</a>
-                        <ul class="dropdown">
-                            <li><a>admit your ward</a></li>
-                            <li><a>admission</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">PAYMENT OF FEES</a></li>
-                    <li><a href="">ALUMNI</a>
-                        <ul class="dropdown">
-                            <li><a>Donation</a></li>
-                            <li><a>Register as an alumni</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">ACADEMIC</a></li>
-                    <li><a href="">LOG IN</a></li>      
-                </ul>
-            </div>
-            
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
-        <!-- <img src="imasha/banner.jpg" class="firstslide"> -->
-        
-           
-         
-          
-       
+    <nav>
+        <div class="nav-container">
+          <!-- <a href="/" class="logo">School Name</a> -->
+          <button class="mobile-menu-btn">☰</button>
+          <ul class="nav-menu">
+            <button class="close-menu-btn">×</button>
+            <li class="nav-item">
+              <a href="{% url 'index' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+              <div class="dropdown">
+                <a href="{% url 'founder' %}">Founder</a>
+                <a href="#">School</a>
+                <a href="{% url 'govern' %}">Governing Body</a>
+                <a href="#">History</a>
+                <a href="{% url 'contact' %}">Contact</a>
 
-    </section>
-    
+                <a href="#">School Calender</a>
+                <a href="#">Scholarships</a>
+
+
+              </div>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Academics</a>
+              <div class="dropdown">
+                <a href="#">Programs</a>
+               
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Admissions</a>
+              <div class="dropdown">
+                <a href="{% url 'admission' %}">Admit </a>
+                <a href="#">Requirements</a>
+                <a href="#">Fees Structure</a>
+              </div>
+            </li>
+           
+            <li class="nav-item">
+              <a href="#" class="nav-link">Alumni</a>
+              <div class="dropdown">
+                <a href="{% url 'alumni' %}">Our Alumnis</a>
+                <a href="#">Register</a>
+                
+                 
+              </div>
+            </li>
+             <li class="nav-item" >
+              <a href="{% url 'gallery' %}" class="nav-link">Gallery</a>
+              
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'login' %}" class="nav-link">login</a>
+              
+            </li>
+          </ul>
+        </div>
+      </nav>
+
    
-    <section class="GALLERY">  
-       <div class="Rowga">
-        <div class="col-3">
-            <img src="imasha/bhanu jayanti.jpg" width="450px" >
-            <h3>Student of the year
-            </h3>
+    <section class="GALLERY-sub">  
+       <div class="Rowga-sub">
+        <div class="col-3-sub">
+          <img src="{% static 'img/bhanu jayanti.jpg' %}" width="450px" >
+            
         </div>
-        <div class="col-3">
-            <img src="imasha/host.jpg"  width="450px">
-            <h3>event 2</h3>
+        <div class="col-3-sub">
+            <img src="{% static 'img/host.jpg' %}"  width="450px">
+           
         </div>
-        <div class="col-3">
-            <img src="imasha/thai.jpg"  width="450px">
-            <h3>event 3</h3>
-        </div>
-       </div>
-       <div class="Rowga">
-        <div class="col-3">
-            <img src="imasha/ses1.jpg" width="450px" >
-            <h3>Student of the year
-            </h3>
-        </div>
-        <div class="col-3">
-            <img src="imasha/demophoto1.jpg"  width="450px">
-            <h3>event 2</h3>
-        </div>
-        <div class="col-3">
-            <img src="imasha/demophoto1.jpg"  width="450px">
-            <h3>event 3</h3>
+        <div class="col-3-sub">
+            <img src="{% static 'img/thai.jpg' %}"  width="450px">
+          
         </div>
        </div>
-       <div class="Rowga">
-        <div class="col-3">
-            <img src="imasha/demophoto1.jpg" width="450px" >
-            <h3>Student of the year
-            </h3>
+       <div class="Rowga-sub">
+        <div class="col-3-sub">
+            <img src="{% static 'img/ses1.jpg' %}" width="450px" >
+           
         </div>
-        <div class="col-3">
-            <img src="imasha/1.jpeg"  width="450px">
-            <h3>event 2</h3>
+        <div class="col-3-sub">
+            <img src="{% static 'img/demophoto1.jpg' %}"  width="450px">
+         
         </div>
-        <div class="col-3">
-            <img src="imasha/2.JPG"  width="450px">
-            <h3>event 3</h3>
+        <div class="col-3-sub">
+            <img src="{% static 'img/demophoto1.jpg' %}"  width="450px">
+            
         </div>
        </div>
-       <div class="Rowga">
-        <div class="col-3">
-            <img src="imasha/4.jpeg" width="450px" >
-            <h3>Student of the year
-            </h3>
+       <div class="Rowga-sub">
+        <div class="col-3-sub">
+            <img src="{% static 'img/demophoto1.jpg' %}" width="450px" >
+            
         </div>
-        <div class="col-3">
-            <img src="imasha/6 (1).jpeg"  width="450px">
-            <h3>event 2</h3>
+        <div class="col-3-sub">
+            <img src="{% static 'img/demophoto1.jpg' %}"  width="450px">
+            
         </div>
-        <div class="col-3">
-            <img src="imasha/1.jpeg"  width="450px">
-            <h3>event 3</h3>
+        <div class="col-3-sub">
+            <img src="{% static 'img/demophoto1.jpg' %}"  width="450px">
+          
+        </div>
+       </div>
+       <div class="Rowga-sub">
+        <div class="col-3-sub">
+            <img src="{% static 'img/bhanu jayanti.jpg' %}" width="450px" >
+            
+        </div>
+        <div class="col-3-sub">
+            <img src="{% static 'img/bhanu jayanti.jpg' %}"  width="450px">
+           
+        </div>
+        <div class="col-3-sub">
+            <img src="{% static 'img/bhanu jayanti.jpg' %}"  width="450px">
+           
         </div>
        </div>
     
@@ -142,23 +149,24 @@
                 </div>
                 <div class="footer-col-3">
                     <h3>Useful links</h3>
-                    <ul>
-                        <li> <a href="GALLERY CHOICE.html">GALLERY</a></li>
-                        <li><a href="Founder.html">FOUNDER</a></li>
-                        <li><a href="paymentoffees.html">AYMENT OF FEES</a></li>
-                        <li><a href="Alumnides.html">ALUMNI</a></li>
-        
-                    </ul>
-                </div>
-                <div class="footer-col-4">
-                    
-                    <h3>Follow us:</h3>
-                    
-                        <img src="imasha/facebook.png" width="40px" height="40px"> 
-                        <img src="imasha/twitter.png" width="40px" height="40px">
-                        <img src="imasha/youtube.png" width="40px" height="40px">
-                        <img src="imasha/insta.png" width="40px" height="40px">
-        
+                  <h3>Useful links</h3>
+                  <ul>
+                    <li> <a href="{% url 'gallery' %}">GALLERY</a></li>
+                    <li><a href="{% url 'founder' %}">FOUNDER</a></li>
+                      <li><a href="{% url 'payment' %}">AYMENT OF FEES</a></li>
+                      <li><a href="{% url 'alumni' %}">ALUMNI</a></li>
+      
+                  </ul>
+              </div>
+              <div class="footer-col-4">
+                  
+                  <h3>Follow us:</h3>
+                  
+            <img src="{% static 'img/facebook.png' %}" width="40px" height="40px"> 
+                        <img src="{% static 'img/twitter.png' %}" width="40px" height="40px">
+                        <img src="{% static 'img/youtube.png' %}" width="40px" height="40px">
+                        <img src="{% static 'img/insta.png' %}" width="40px" height="40px">
+      
                     
               
                 </div>
@@ -168,17 +176,46 @@
                 <p class="copyright">copyright-none</p>
             </div>
     <!-- -------------------------JAVASCRIPT FOR TOGGLE MENU-------------------------- -->
-    <script> 
-    var navliinks = document.getElementById("navliinks")
-    function showMenu(){
-        navliinks.style.right ="0";
-
-    }
-    function hideMenu(){
-        navliinks.style.right ="-200px";
-    }
-
-    </script>
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const closeMenuBtn = document.querySelector('.close-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function closeMenu() {
+          navMenu.classList.remove('active');
+          menuOverlay.classList.remove('active');
+        }
+        
+        mobileMenuBtn.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          menuOverlay.classList.toggle('active');
+        });
+        
+        closeMenuBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+  
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const dropdown = this.nextElementSibling;
+            
+            navLinks.forEach(otherLink => {
+              if (otherLink !== this) {
+                const otherDropdown = otherLink.nextElementSibling;
+                if (otherDropdown) {
+                  otherDropdown.classList.remove('active');
+                }
+              }
+            });
+            
+            if (dropdown) {
+              dropdown.classList.toggle('active');
+            }
+          });
+        });
+      </script>
     <script>
         var slideIndex = 0;
 showSlides();
