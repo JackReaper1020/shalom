@@ -33,4 +33,5 @@ urlpatterns = [
     path('Vision&Mission/', views.views, name="views"), 
     path('StudentOfTheYear/', views.soty, name="soty"), 
     path('admissionform/', views.admission, name="admission"), 
+    path('adminpage/', views.adminpage, name="adminpage"), 
 ]

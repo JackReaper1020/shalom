@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Admin
 
 def index(request): 
     return render(request, 'index.html')
@@ -40,3 +41,7 @@ def login(request):
 # admission PAGE
 def admission(request): 
     return render(request, 'admission.html')
+# admin PAGE
+def adminpage(request): 
+    admins = Admin.objects.all
+    return render(request, 'admin.html', {'all':admins})
