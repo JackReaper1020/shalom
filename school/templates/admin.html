@@ -1,42 +1,28 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-        .container { width: 80%; margin: 50px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
-        h2 { text-align: center; color: #333; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
-        th { background-color: #28a745; color: white; }
-    </style>
-</head>
-<body>
+<h1>HELLO</h1>
 
-<div class="container">
-    <h2>Admin Dashboard</h2>
+
     <h3>Student List </h3>
     <table>
         <tr>
             <th>Unique Id.</th>
             <th>Name</th>
-            <th>Semster</th>
         </tr>
-        {% for admin in all %}
+        {% for student in admin %}
         <tr>
-            <td>{{ admin.fname }}</td>
-            <td>{{ admin.lname }}</td>
-            <td>{{ admin.email }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.class_admission }}</td>
             <td>
             </td>
         </tr>
         {% endfor %}
     </table>
-</div>
+<form action="#" method="post" action={% url 'adminpage' %}>
+  {% csrf_token %}
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
 
-</body>
-</html>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
 
+            <button type="submit">Submit</button>
+</form>

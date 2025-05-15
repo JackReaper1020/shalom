@@ -1580,3 +1580,194 @@ ul{
     background-color: #457b9d;
 }
 
+/*================================= vision and mission--------------------------------------------------------------------------------------------------- */
+    .vision-mission{
+      display: block;
+
+      align-items: center;
+      width: 90%;
+      padding: 10px;
+      margin: auto;
+    }
+    .vision-mission h1{
+      font-size: 40px;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      transition: 2s;
+    }
+    .vision-mission h1:hover{
+     font-size: 45px;
+     transform: translateZ(+5px);
+    }
+    .rowvis{
+      
+      display: flex;
+      
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    .colvis{
+      flex-basis: 40%;
+      justify-content: center;
+      display: block;
+      align-items: center;
+      margin: auto;
+      padding: 5px;
+    }
+    .colvis img{
+    display: block;
+    margin: auto;
+    width: 350px;
+    height: 300px;
+      
+
+    }
+    .colvis h3{
+      font-size: 20px;
+      text-align: center;
+    }
+    .colvis p{
+    font-size: 10px;
+    
+    }
+    @media (max-width :700px)
+    {
+      .vision-mission{
+        width: 90%;
+      }
+      .vision-mission h1{
+        font-size: 30px;
+
+      }
+      .rowvis{
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .colvis img{
+        width: 250px;
+        height: 200px;
+      }
+      .vision-mission h1:hover{
+        font-size: 50px;
+        transform: translateZ(+5px);
+        
+        
+       }
+    }
+    @media (max-width :500px)
+    {
+      .vision-mission{
+        width: 90%;
+      }
+      .vision-mission h1{
+        font-size: 20px;
+
+      }
+      .vision-mission h1:hover{
+        font-size: 40px;
+        transform: translateZ(+5px);
+       }
+      .rowvis{
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .colvis img{
+        width: 125px;
+        height: 100px;
+      }
+    }
+     /*==========================================================rules and  regulations ---------------------------------------------  */
+     .rules{
+      display: block;
+      align-items: center;
+      width: 80%;
+      margin: auto;
+      padding: 10px;
+     }
+     .rulehead h1{
+      display: block;
+      text-align: center;
+      color: red;
+      text-decoration: underline;
+      font-family: 'Times New Roman', Times, serif;
+      
+     }
+     .rulehead h3{
+      display: block;
+      text-align: center;
+      color: red;
+      text-decoration: underline;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .cont h3{
+      display: block;
+      text-align: left;
+      color:black;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .cont p{
+      display: block;
+      text-align: left;
+      
+    }
+
+/* ======================================payment========================================= */
+.payment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 90%;
+    height: 125px;
+    background-color:#1a365d ;
+    
+  
+}
+.payrow{
+  display: flex;
+  width: 700px;
+  justify-content: center;
+  vertical-align: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color:#1a365d ;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.payrow:hover{
+  background-color:#142b4a ;
+}
+.payrow a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+.payrow img{
+ width: 100px;
+ height: 100px;
+}
+@media(max-width: 700px) {
+
+  .payment{
+    height: 100px;
+  
+  }
+  .payrow{
+    width: 500px;
+    border-radius: 50%;
+
+  }
+  .payrow img{
+    width: 50px;
+    height: 50px;
+  }
+  .payrow a{
+    font-size: 10px;
+  }
+}

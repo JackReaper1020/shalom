@@ -1,9 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content=" with=device-width , initial-scale=1.0">
     <title>Shalom english school</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
@@ -11,79 +13,117 @@
 </head>
 <body>
     <div class="heading">
-        <a href="index.html"><img src="imasha/logodemo.png" width="100px" height="100px">
-        </a>
+      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" width="100px" height="100px">        </a>
         <h1 >SHALOM ENGLISH SCHOOL,CHOTAHATTA</h1>
         
     </div>
-    <section class="founder_head">
-        <nav>
-            <!-- <a href="index.html"><img src="imasha/logodemo.png" width="100px" height="100px"> -->
-            <!-- </a> -->
-             <div class="navlinks" id="navliinks">
-                  <i class="fa fa-times"  onclick="hideMenu()"></i>
-                <ul>
-                    <!-- <i class="fa fa-times"  onclick="hideMenu()"></i> -->
-                    <!-- <i class="fa fa-times"></i> -->
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ABOUT</a>
-                    <ul class="dropdown" style="font-size: 10px;">
-                        <li><a>FOUNDER</a></li>
-                        <li><a>SCHOOL</a></li>
-                        <li><a>HISTORY</a></li>
-                        <li><a>FOUNDER'S MESSAGE</a></li>
-                        <li><a>VIVISON AND MISSION</a></li>
-                        <li><a>CONTACT</a></li>
-                        <li><a>GOVERNING BODY</a></li>
-                    </ul>
-                </li>
-                    <li><a href="">ADMISSION</a>
-                        <ul class="dropdown">
-                            <li><a>admit your ward</a></li>
-                            <li><a>admission</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">PAYMENT OF FEES</a></li>
-                    <li><a href="">ALUMNI</a>
-                        <ul class="dropdown">
-                            <li><a>Donation</a></li>
-                            <li><a>Register as an alumni</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">ACADEMIC</a></li>
-                    <li><a href="">LOG IN</a></li>      
-                </ul>
-            </div>
-            
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
-        <!-- <img src="imasha/banner.jpg" class="firstslide"> -->
-        
-           
-         
-          
-       
+    <nav>
+        <div class="nav-container">
+          <!-- <a href="/" class="logo">School Name</a> -->
+          <button class="mobile-menu-btn">☰</button>
+          <ul class="nav-menu">
+            <button class="close-menu-btn">×</button>
+            <li class="nav-item">
+              <a href="{% url 'index' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+              <div class="dropdown">
+                <a href="{% url 'founder' %}">Founder</a>
+                <a href="#">School</a>
+                <a href="{% url 'govern' %}">Governing Body</a>
+                <a href="#">History</a>
+                <a href="{% url 'contact' %}">Contact</a>
 
-    </section>
+                <a href="#">School Calender</a>
+                <a href="#">Scholarships</a>
+                <a href="{% url 'rules' %}">Rules and Regulations</a>
+
+
+              </div>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Academics</a>
+              <div class="dropdown">
+                <a href="#">Programs</a>
+               
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Admissions</a>
+              <div class="dropdown">
+                <a href="{% url 'admission' %}">Admit </a>
+                <a href="#">Requirements</a>
+                <a href="#">Fees Structure</a>
+              </div>
+            </li>
+           
+            <li class="nav-item">
+              <a href="#" class="nav-link">Alumni</a>
+              <div class="dropdown">
+                <a href="{% url 'alumni' %}">Our Alumnis</a>
+                <a href="#">Register</a>
+                
+                 
+              </div>
+            </li>
+             <li class="nav-item" >
+              <a href="{% url 'gallery' %}" class="nav-link">Gallery</a>
+              
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'login' %}" class="nav-link">login</a>
+              
+            </li>
+          </ul>
+        </div>
+      </nav>
     
    
-    <section class="descripfoun">  
-        <img src="imasha/foun.jpg">  
-        <h1>MR. PRAVEEN MUKHIA TITIMUS</h1>
+    <section class="vision-mission">  
+         <h1> Vision and Mission of our school</h1>
+         <div class="rowvis">
+            <div class="colvis">
+         <img src="imasha/gp lodhoma.jpg" >
+         </div>
+         <div class="colvis">
+        <h3>
+            Nurturing of the students
+        </h3>   
+         <p>
+            Nurturing the students is our main priority and is always our prior to have the students in our arms
+         </p>
+            </div>
+        </div>
+        <div class="rowvis">
+         
+         <div class="colvis">
+        <h3>
+            Nurturing of the students
+        </h3>   
+         <p>
+            Nurturing the students is our main priority and is always our prior to have the students in our arms
+         </p>
+            </div>
+            <div class="colvis">
+                <img src="imasha/gp lodhoma.jpg" >
+                </div>
+        </div>
+      
     
-         <p>This is the thing that happens tin the school and is very mesmerising 
-            jadbfc jwdagnbiyukawjshfnawpKD  IUQHDUIHNDLKA JHBDCKN KJC QUDOIAIHNDAJSDBA UOABFUBANA 
-            HFUIDBFDF AD.Fjkbasdn uicjkndmfiaklsmdc'lmck mss cjnsdconkldsc,sdm m dflkfnelkaopka,m lkcm,a[s'dl[adjeoionaklmls['lmadljnpiadidapdmaskdamdslkmnalksdjmcahfiulakjsnc kaj,bnf']]]
-         </p> 
+         
 
     
     
         </section>
         <!-- -----------------------------------------payment-------------------------------------- -->
-        <section class="payment">
-            <h1>Make your payment here =></h1>
-            <a href=""><img src="imasha/sl_033122_49420_23.jpg"></a>
-        </section>
+         <div class="payment">
+            <a href="paymentoffees.html"><div class="payrow">
+            <ap href="paymentoffees.html"><img src="imasha/SES ACTUAL NEW LOGO.png" ></a>
+            <a href="paymentoffees.html"><h3>Make your payment over here</h3></a>
+        </a>
+        </div>
+        </div>
+       
         <!-- --------------------------------------------------footer----------------------------------- -->
         <div class="footer">
             <div class="container">
@@ -123,17 +163,46 @@
                 <p class="copyright">copyright-none</p>
             </div>
     <!-- -------------------------JAVASCRIPT FOR TOGGLE MENU-------------------------- -->
-    <script> 
-    var navliinks = document.getElementById("navliinks")
-    function showMenu(){
-        navliinks.style.right ="0";
-
-    }
-    function hideMenu(){
-        navliinks.style.right ="-200px";
-    }
-
-    </script>
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const closeMenuBtn = document.querySelector('.close-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function closeMenu() {
+          navMenu.classList.remove('active');
+          menuOverlay.classList.remove('active');
+        }
+        
+        mobileMenuBtn.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          menuOverlay.classList.toggle('active');
+        });
+        
+        closeMenuBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+  
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const dropdown = this.nextElementSibling;
+            
+            navLinks.forEach(otherLink => {
+              if (otherLink !== this) {
+                const otherDropdown = otherLink.nextElementSibling;
+                if (otherDropdown) {
+                  otherDropdown.classList.remove('active');
+                }
+              }
+            });
+            
+            if (dropdown) {
+              dropdown.classList.toggle('active');
+            }
+          });
+        });
+      </script>
     <script>
         var slideIndex = 0;
 showSlides();

@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import Admin
+from .models import Admin,Admission
+from django.contrib.auth.decorators import login_required
+from .forms import AdmissionForm, adminForm
 
 def index(request): 
     return render(request, 'index.html')
@@ -40,8 +42,18 @@ def login(request):
     return render(request, 'login.html')
 # admission PAGE
 def admission(request): 
-    return render(request, 'admission.html')
+    if request.method == "POST": 
+        form = AdmissionForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return render(request, 'Thankyou.html')
+        else: 
+            print("Invalid form.", form.errors)
+            return render(request, 'admission.html')
+    else: 
+
+        return render(request, 'admission.html')
 # admin PAGE
 def adminpage(request): 
-    admins = Admin.objects.all
-    return render(request, 'admin.html', {'all':admins})
+    admins = Admission.objects.all
+    return render(request, 'admin.html', {'admin':admins})
