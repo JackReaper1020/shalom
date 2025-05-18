@@ -5,10 +5,8 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    /* background: linear-gradient(rgb(255, 0, 0),rgba(200, 189, 189, 0.866)); */
 }
 body{
-    /* background: linear-gradient(rgba(200, 189, 189, 0.866),rgb(255, 0, 0));; */
     background: solid whitesmoke;
 }
 .heading{
@@ -16,11 +14,8 @@ body{
     flex-basis: 25%;
     justify-content: center;
     align-content: center;
-    /* display:flex;
-    flex-basis: 30%; */
     text-align: center;
     margin: 0 auto;
-    /* display: ruby; */
     width: 100%;
     background: linear-gradient(rgb(255, 0, 0),rgba(200, 189, 189, 0.866));
 }
@@ -46,17 +41,6 @@ body{
     justify-content: center;
     
 }
-/* .header .firstslide{
-    width: 100%;
-    height: auto;
-    justify-content: center;
-}
-.header::after{
-    margin-left:100%;
-    overflow-x: hidden;
-
-
-} */
 .header {
     max-width: 90%;
     position: relative;
@@ -348,11 +332,6 @@ body{
     .textbox h1{
         font-size: 20px;  
     }
-    /* .textbox p{
-        margin: 19px 0 40px;
-        font-size: 10px;
-        color: beige;
-    } */
      .navlinks ul li a{
         font-size: 10px;
      }
@@ -833,8 +812,6 @@ ul{
     
     width: 600px;
     
-    /* padding-left: 200px;
-    padding-right: 200px; */
     justify-content: space-between;
 
 
@@ -875,8 +852,6 @@ ul{
  .GALLERY .col-3{
     flex-basis: 10%;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1 );
-    
-    /* padding: ; */
     transition: 1s;
   
  }
@@ -958,7 +933,6 @@ ul{
       flex-basis: 10%;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.668);
       
-      /* padding: ; */
       transition: 1s;
     
    }
@@ -1021,10 +995,6 @@ ul{
        z-index: 10;
      }
     }
- /* .col-3 img{
-    flex-basis: 30%;
-
- } */
   /* ------------------------------------------alumni description--------------------------- */
   .alumdes{
     display: inline-block;
@@ -1771,3 +1741,44 @@ ul{
     font-size: 10px;
   }
 }
+.alert {
+  position: relative;
+  padding: 1rem 2rem 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+.alert-success {
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+  color: #0f5132;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  color: #842029;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+  color: #664d03;
+}
+
+.alert-dismissible .btn-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+  color: inherit;
+  cursor: pointer;
+}
+

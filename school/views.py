@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Admin,Admission
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Admin,Admission,Student
 from django.contrib.auth.decorators import login_required
 from .forms import AdmissionForm, adminForm
 
@@ -46,14 +47,16 @@ def admission(request):
         form = AdmissionForm(request.POST or None)
         if form.is_valid():
             form.save()
-            return render(request, 'Thankyou.html')
+            return redirect(request, 'Thankyou.html')
         else: 
             print("Invalid form.", form.errors)
-            return render(request, 'admission.html')
+            return redirect(request, 'admission.html')
     else: 
 
         return render(request, 'admission.html')
 # admin PAGE
 def adminpage(request): 
-    admins = Admission.objects.all
-    return render(request, 'admin.html', {'admin':admins})
+    admins = Admin.objects.count()
+    student = Student.objects.count()
+    admission = Admission.objects.count()
+    return render(request, 'admin.html', {'student': student, 'admin':admins, 'admission':admission})

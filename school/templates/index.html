@@ -1,314 +1,70 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content=" with=device-width , initial-scale=1.0">
-    <title>Shalom english school</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div class="heading">
-      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" width="100px" height="100px">        </a>
-        <h1 >SHALOM ENGLISH SCHOOL,CHOTAHATTA</h1>
-        
+{% block title %} Shalom English School {% endblock %}
+{% block content %}
+<div class="menu-overlay"></div>
+<section class="header">
+  <div class="mySlides fade">
+    <img src="{% static 'img/banner.jpg' %}" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="{% static 'img/2.JPG' %}" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="{% static 'img/1.jpeg' %}" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="{% static 'img/4.jpeg' %}" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="{% static 'img/6 (1).jpeg' %}" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="{% static 'img/6 (2).jpeg'  %}" style="width:100%">
+  </div>
+  <div class="textbox">
+    <h1>SHALOM ENGLISH SCHOOL</h1>
+    <P>Where education along with other activities is everything</P>
+    <a class="herobtn">visit us to know more</a>
+  </div>
+</section>
+<!-- course and facilities -->
+<section class="middes">
+  <h1>Facilities we offer to the students</h1>
+  <p>here are the things that can be written </p>
+  <div class="row">
+    <div class="coursecol">
+      <img src="{% static 'img/demophoto1.jpg' %}">
+      <h3>hhi facilities</h3>
+      <p>yshjbjasjhanjbadfban jsadnasjdnx ckjxncoalsncpa</p>
     </div>
-    <nav>
-        <div class="nav-container">
-          <!-- <a href="/" class="logo">School Name</a> -->
-          <button class="mobile-menu-btn">☰</button>
-          <ul class="nav-menu">
-            <button class="close-menu-btn">×</button>
-            <li class="nav-item">
-              <a href="{% url 'index' %}" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">About</a>
-              <div class="dropdown">
-                <a href="{% url 'founder' %}">Founder</a>
-                <a href="#">School</a>
-                <a href="{% url 'govern' %}">Governing Body</a>
-                <a href="#">History</a>
-                <a href="{% url 'contact' %}">Contact</a>
-
-                <a href="#">School Calender</a>
-                <a href="#">Scholarships</a>
-                <a href="{% url 'rules' %}">Rules and Regulations</a>
-
-
-              </div>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Academics</a>
-              <div class="dropdown">
-                <a href="#">Programs</a>
-               
-              </div>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Admissions</a>
-              <div class="dropdown">
-                <a href="{% url 'admission' %}">Admit </a>
-                <a href="#">Requirements</a>
-                <a href="#">Fees Structure</a>
-              </div>
-            </li>
-           
-            <li class="nav-item">
-              <a href="#" class="nav-link">Alumni</a>
-              <div class="dropdown">
-                <a href="{% url 'alumni' %}">Our Alumnis</a>
-                <a href="#">Register</a>
-                
-                 
-              </div>
-            </li>
-             <li class="nav-item" >
-              <a href="" class="nav-link">Gallery</a>
-              <div class="dropdown">
-                <a href="{% url 'gallery' %}">See Gallery Album</a>
-                
-                 
-              </div>
-              
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'login' %}" class="nav-link">login</a>
-              <div class="dropdown">
-                <a href="{% url 'login' %}">Login</a>
-                
-                 
-              </div>
-              
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      
-      <div class="menu-overlay"></div>
-    <section class="header">
-       
-            <div class="mySlides fade">
-              <img src="{% static 'img/banner.jpg' %}" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-              <img src="{% static 'img/2.JPG' %}" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-              <img src="{% static 'img/1.jpeg' %}" style="width:100%">
-
-            </div>
-            <div class="mySlides fade">
-                <img src="{% static 'img/4.jpeg' %}" style="width:100%">
-              </div>
-              <div class="mySlides fade">
-                <img src="{% static 'img/6 (1).jpeg' %}" style="width:100%">
-              </div>
-              <div class="mySlides fade">
-                <img src="{% static 'img/6 (2).jpeg'  %}" style="width:100%">
-                
-              </div>
-         <!-- Add more slides as needed -->
-           <!-- <div class="dots">
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-              <span class="dot" onclick="currentSlide(4)"></span>
-              <span class="dot" onclick="currentSlide(5)"></span>
-              <span class="dot" onclick="currentSlide(6)"></span>
-               Add more dots as needed             </div>
-            -->
-         
-          
-       <div class="textbox">
-
-        <h1>SHALOM ENGLISH SCHOOL</h1>
-        <P>Where education along with other activities is everything</P>
-
-        <a class="herobtn">visit us to know more</a>
-       </div>
-
-    </section>
-    
-    <!-- course and facilities -->
-    <section class="middes">    
-    <h1>Facilities we offer to the students</h1>
-     <p>here are the things that can be written </p>
-     <div class="row">
-        
-        <div class="coursecol">
-            <img src="{% static 'img/demophoto1.jpg' %}">
-            <h3>hhi facilities</h3>
-            <p>yshjbjasjhanjbadfban jsadnasjdnx ckjxncoalsncpa</p>
-        </div>
-        <div class="coursecol">
-            <img src="{% static 'img/demophoto1.jpg' %}">
-            <h3>hello facilities</h3>
-            <p>yshjbjasjhanjbadfban jsadnasjdnx ckjxncoalsncpa</p>
-        </div>
-        <div class="coursecol">
-            <img src="{% static 'img/demophoto2.jpg' %}">
-            <h3>hellow facilities</h3>
-            <p>yshjbjasjhanjbadfban jsadnasjdnx ckjxncoalsncpa</p>
-        </div>
-     </div>
-
-    </section>
-    <section class="desfoun">  
-        <img src="{% static 'img/Chairman and Director.png' %}">  
-        <h1>MR. PRAVEEN MUKHIA TITIMUS</h1>
-       
-         <p>This is the thing that happens tin the school and is very mesmerising 
-            jadbfc jwdagnbiyukawjshfnawpKD  IUQHDUIHNDLKA JHBDCKN KJC QUDOIAIHNDAJSDBA UOABFUBANA 
-            HFUIDBFDF AD.Fjkbasdn uicjkndmfiaklsmdc'lmck mss cjnsdconkldsc,sdm m dflkfnelkaopka,m lkcm,a[s'
-            dl[adjeoionaklmls['lmadljnpiadidapdmaskdamdslkmnalksdjmcahfiulakjsnc kaj,bnf']]]
-         </p> 
-     
-    
-    
-        </section>
-        <!-- -----------------------------------------payment-------------------------------------- -->
-        <section class="payment">
-            <h1>Make your payment here =></h1>
-            <a href="{% url 'payment' %}"><img src="{% static 'img/sl_033122_49420_23.jpg' %}"></a>
-        </section>
-        
-        <!-- --------------------------------------------------footer----------------------------------- -->
-        <div class="footer">
-          <div class="container-foot">
-              <div class="row">
-                  <div class="footer-col-1">
-                      <h3>Visit us at:</h3>
-                      <p> Demo address St. Joseph's College North Point ,Lebong cart road<br>Darjeeling-734101<br>West Bengal </p>
-                  </div>
-              <div class="footer-col-2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3552.305113697604!2d88.103027!3d27.0836738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e5d530cd862f19%3A0xcb84d3a2f62e6aa1!2sSHALOM%20ENGLISH%20SCHOOL!5e0!3m2!1sen!2sin!4v1741622468785!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-              <div class="footer-col-3">
-                  <h3>Useful links</h3>
-                  <ul>
-                    <li> <a href="{% url 'gallery' %}">GALLERY</a></li>
-                    <li><a href="{% url 'founder' %}">FOUNDER</a></li>
-                      <li><a href="{% url 'payment' %}">AYMENT OF FEES</a></li>
-                      <li><a href="{% url 'alumni' %}">ALUMNI</a></li>
-      
-                  </ul>
-              </div>
-              <div class="footer-col-4">
-                  
-                  <h3>Follow us:</h3>
-                  
-            <img src="{% static 'img/facebook.png' %}" width="40px" height="40px"> 
-                        <img src="{% static 'img/twitter.png' %}" width="40px" height="40px">
-                        <img src="{% static 'img/youtube.png' %}" width="40px" height="40px">
-                        <img src="{% static 'img/insta.png' %}" width="40px" height="40px">
-      
-                  
-            
-              </div>
-      
-              </div>
-              <hr>
-              <p class="copyright">copyright-none</p>
-          </div>
-      </div>
-      
-        <!-- <section class="footer">
-            <div class="rowfooter">
-                <div class="footercol">
-             <ul>
-                <li>Glimpses</li>
-                <li>Contact us</li>
-             </ul>
-                </div>
-                 <div class="footercol">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3552.305113697604!2d88.103027!3d27.0836738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e5d530cd862f19%3A0xcb84d3a2f62e6aa1!2sSHALOM%20ENGLISH%20SCHOOL!5e0!3m2!1sen!2sin!4v1741622468785!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-               </div>
-               <div class="footercol">
-                 <h3>our address</h3>
-                 <p>Shalom english school
-                    chotahatta, darjeeling
-                 </p>
-               </div>
-            </div>
-
-        </section> -->
-    <!-- -------------------------JAVASCRIPT FOR TOGGLE MENU-------------------------- -->
-    <!-- <script> 
-    var navliinks = document.getElementById("navliinks")
-    function showMenu(){
-        navliinks.style.right ="0";
-
-    }
-    function hideMenu(){
-        navliinks.style.right ="-200px";
-    }
-
-    </script> -->
-    <script>
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const closeMenuBtn = document.querySelector('.close-menu-btn');
-        const navMenu = document.querySelector('.nav-menu');
-        const menuOverlay = document.querySelector('.menu-overlay');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        function closeMenu() {
-          navMenu.classList.remove('active');
-          menuOverlay.classList.remove('active');
-        }
-        
-        mobileMenuBtn.addEventListener('click', function() {
-          navMenu.classList.toggle('active');
-          menuOverlay.classList.toggle('active');
-        });
-        
-        closeMenuBtn.addEventListener('click', closeMenu);
-        menuOverlay.addEventListener('click', closeMenu);
-  
-        navLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const dropdown = this.nextElementSibling;
-            
-            navLinks.forEach(otherLink => {
-              if (otherLink !== this) {
-                const otherDropdown = otherLink.nextElementSibling;
-                if (otherDropdown) {
-                  otherDropdown.classList.remove('active');
-                }
-              }
-            });
-            
-            if (dropdown) {
-              dropdown.classList.toggle('active');
-            }
-          });
-        });
-      </script>
-    <script>
-        var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none"; 
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1} 
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 6000); // Change image every 5 seconds
-}
-
-    </script>
+    <div class="coursecol">
+      <img src="{% static 'img/demophoto1.jpg' %}">
+      <h3>hello facilities</h3>
+      <p>yshjbjasjhanjbadfban jsadnasjdnx ckjxncoalsncpa</p>
+    </div>
+    <div class="coursecol">
+      <img src="{% static 'img/demophoto2.jpg' %}">
+      <h3>hellow facilities</h3>
+      <p>yshjbjasjhanjbadfban jsadnasjdnx ckjxncoalsncpa</p>
+    </div>
+  </div>
+</section>
+<section class="desfoun">
+  <img src="{% static 'img/Chairman and Director.png' %}">
+  <h1>MR. PRAVEEN MUKHIA TITIMUS</h1>
+  <p>This is the thing that happens tin the school and is very mesmerising
+    jadbfc jwdagnbiyukawjshfnawpKD IUQHDUIHNDLKA JHBDCKN KJC QUDOIAIHNDAJSDBA UOABFUBANA
+    HFUIDBFDF AD.Fjkbasdn uicjkndmfiaklsmdc'lmck mss cjnsdconkldsc,sdm m dflkfnelkaopka,m lkcm,a[s'
+    dl[adjeoionaklmls['lmadljnpiadidapdmaskdamdslkmnalksdjmcahfiulakjsnc kaj,bnf']]]
+  </p>
+</section>
+<!-- -----------------------------------------payment-------------------------------------- -->
+<section class="payment">
+  <h1>Make your payment here =></h1>
+  <a href="{% url 'payment' %}"><img src="{% static 'img/sl_033122_49420_23.jpg' %}"></a>
+</section>
+{% endblock %}
 </body>
+
 </html>

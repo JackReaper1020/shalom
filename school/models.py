@@ -42,7 +42,7 @@ class Admission(models.Model):
     sibling_class1 = models.CharField(max_length=50)
     sibling_relation1 = models.CharField(max_length=50)
 
-
+ 
     # Studnet's Address Information
     address = models.CharField(max_length=50)
     distance = models.CharField(max_length=50)
@@ -57,5 +57,14 @@ class Admission(models.Model):
     category = models.CharField(max_length=50)
 
 
+    def __str__(self): 
+        return self.name
+
+
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    dob = models.DateField(max_length=8)
+    gender = models.CharField(max_length=4)
+    current_class = models.CharField(max_length=2)
     def __str__(self): 
         return self.name

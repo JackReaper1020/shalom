@@ -1,291 +1,125 @@
+{% extends 'base.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content=" with=device-width , initial-scale=1.0">
-    <title>Shalom english school</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div class="heading">
-      <a href="index.html"><img src="{% static 'img/logo.png' %}" width="100px" height="100px">        </a>
-        <h1 >SHALOM ENGLISH SCHOOL,CHOTAHATTA</h1>
-        
-    </div>
-    <nav>
-        <div class="nav-container">
-          <!-- <a href="/" class="logo">School Name</a> -->
-          <button class="mobile-menu-btn">☰</button>
-          <ul class="nav-menu">
-            <button class="close-menu-btn">×</button>
-            <li class="nav-item">
-              <a href="{% url 'index' %}" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">About</a>
-              <div class="dropdown">
-                <a href="{% url 'founder' %}">Founder</a>
-                <a href="#">School</a>
-                <a href="{% url 'govern' %}">Governing Body</a>
-                <a href="#">History</a>
-                <a href="{% url 'contact' %}">Contact</a>
-
-                <a href="#">School Calender</a>
-                <a href="#">Scholarships</a>
-                <a href="{% url 'rules' %}">Rules and Regulations</a>
-
-
-              </div>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Academics</a>
-              <div class="dropdown">
-                <a href="#">Programs</a>
-               
-              </div>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Admissions</a>
-              <div class="dropdown">
-                <a href="#">Requirements</a>
-                <a href="#">Fees Structure</a>
-              </div>
-            </li>
-           
-            <li class="nav-item">
-              <a href="#" class="nav-link">Alumni</a>
-              <div class="dropdown">
-                <a href="{% url 'alumni' %}">Our Alumnis</a>
-                <a href="#">Register</a>
-                
-                 
-              </div>
-            </li>
-             <li class="nav-item" >
-              <a href="{% url 'gallery' %}" class="nav-link">Gallery</a>
-              
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'login' %}" class="nav-link">login</a>
-              
-            </li>
-          </ul>
-        </div>
-      </nav>
-       <div class="form-container">
-        <h1 class="formhead">Admission Form</h1>
-        <form id="FORM" method="POST" action="{% url 'admission' %}">
-          {% csrf_token %}
-            <fieldset class="formfield">
-                <legend class="formlegend">1. Student Information</legend>
-                <label class="formlabel">Class of Admission: <input class="forminput" type="text" name="class_admission" id="class_admission" required></label>
-                <label class="formlabel">Name (as on Aadhaar): <input class="forminput" type="text" name="name" id="name" required></label>
-                <label class="formlabel">Date of Birth: <input class="forminput" type="date" name="dob" id="dob" required></label>
-                <label class="formlabel">Gender:
-                    <select class="formselect" name="gender" required>
-                        <option>Boy</option>
-                        <option>Girl</option>
-                    </select>
-                </label>
-                <label class="formlabel">Place of Birth: <input class="forminput" type="text" id="place_of_birth" name="place_of_birth" required></label>
-                <label class="formlabel">Nationality: <input class="forminput" type="text" id="nationality" name="nationality" required></label>
-                <label class="formlabel">WhatsApp Number (Parent): <input class="forminput" type="number" id="p_number" name="p_number" required></label>
-                <label class="formlabel">Aadhaar Number: <input class="forminput" type="text" id="aadhaar" name="aadhaar"></label>
-                <label class="formlabel">BPL Family:
-                    <select class="formselect" id="bpl" name="bpl">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <legend class="formlegend">2. Parent / Guardian Information</legend>
-                <label class="formlabel">Father’s Name: <input class="forminput" type="text" id="father_name" name="father_name" required></label>
-                <label class="formlabel">Father’s Mobile: <input class="forminput" type="number" id="father_number" name="father_number" required></label>
-                <label class="formlabel">Father’s Occupation:
-                    <select class="formselect" id="father_occupation" name="father_occupation">
-                        <option>Agriculture Farmer</option>
-                        <option>Laborer</option>
-                        <option>Self-Employed</option>
-                        <option>Private Job</option>
-                        <option>Govt. Employee</option>
-                        <option>Military Personnel</option>
-                        <option>Other</option>
-                    </select>
-                </label>
-                <label class="formlabel">Mother’s Name: <input class="forminput" type="text" id="mother_name" name="mother_name" required></label>
-                <label class="formlabel">Mother’s Mobile: <input class="forminput" type="number" id="mother_number" name="mother_number" required></label>
-                <label class="formlabel">Mother’s Occupation:
-                    <select class="formselect" id="mother_occupation" name="mother_occupation">
-                        <option>Housewife</option>
-                        <option>Agriculture Farmer</option>
-                        <option>Laborer</option>
-                        <option>Self-Employed</option>
-                        <option>Private Job</option>
-                        <option>Govt. Employee</option>
-                        <option>Military Personnel</option>
-                        <option>Other</option>
-                    </select>
-                </label>
-                <label class="formlabel">Annual Income (Rs): <input class="forminput" type="number" id="income" name="income"></label>
-            </fieldset>
-
-            <fieldset>
-                <legend class="formlegend">3. Sibling Information</legend>
-                <label class="formlabel">Name: <input class="forminput" type="text" id="sibling_name1" name="sibling_name1"></label>
-                <label class="formlabel">Class: <input class="forminput" type="text" id="sibling_class1" name="sibling_class1"></label>
-                <label class="formlabel">Relation:
-                    <select class="formselect" id="sibling_relation1" name="sibling_relation1">
-                        <option>Brother</option>
-                        <option>Sister</option>
-                    </select>
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <legend class="formlegend">4. Address Information</legend>
-                <label class="formlabel">Correspondence Address: <input class="forminput" type="text" id="address" name="address" required></label>
-                <label class="formlabel">Distance from School (km): <input class="forminput" type="number" id="distance" name="distance" required></label>
-                <label class="formlabel">City: <input class="forminput" type="text" id="city" name="city" required></label>
-                <label class="formlabel">District: <input class="forminput" type="text" id="district" name="district" required></label>
-                <label class="formlabel">State: <input class="forminput" type="text" id="state" name="state" required></label>
-                <label class="formlabel">Pin Code: <input class="forminput" type="text" id="pincode" name="pincode" required></label>
-            </fieldset>
-
-            <fieldset>
-                <legend class="formlegend">5. Reservation Info</legend>
-                <label class="formlabel">Religion:
-                    <select class="formselect" id="religion" name="religion" required>
-                        <option>Hindu</option>
-                        <option>Christian</option>
-                        <option>Muslim</option>
-                        <option>Buddhist</option>
-                        <option>Sikh</option>
-                        <option>Jain</option>
-                        <option>Parsi</option>
-                    </select>
-                </label>
-                <label class="formlabel">Category:
-                    <select class="formselect" id="category" name="category">
-                        <option>General</option>
-                        <option>ST</option>
-                        <option>SC</option>
-                        <option>OBC-A</option>
-                        <option>OBC-B</option>
-                    </select>
-                </label>
-            </fieldset>
-
-
-            <button class="formbutton" type="submit">Submit Application</button>
-        </form>
-    </div>
-        <!-- --------------------------------------------------footer----------------------------------- -->
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col-1">
-                        <h3>Visit us at:</h3>
-                        <p> Demo address St. Joseph's College North Point ,Lebong cart road<br>Darjeeling-734101<br>West Bengal </p>
-                    </div>
-                <div class="footer-col-2">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3552.305113697604!2d88.103027!3d27.0836738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e5d530cd862f19%3A0xcb84d3a2f62e6aa1!2sSHALOM%20ENGLISH%20SCHOOL!5e0!3m2!1sen!2sin!4v1741622468785!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Useful links</h3>
-                    <ul>
-                    <li> <a href="{% url 'gallery' %}">GALLERY</a></li>
-                    <li><a href="{% url 'founder' %}">FOUNDER</a></li>
-                      <li><a href="{% url 'payment' %}">AYMENT OF FEES</a></li>
-                      <li><a href="{% url 'alumni' %}">ALUMNI</a></li>
-        
-                    </ul>
-                </div>
-                <div class="footer-col-4">
-                    
-                    <h3>Follow us:</h3>
-                    
-            <img src="{% static 'img/facebook.png' %}" width="40px" height="40px"> 
-                        <img src="{% static 'img/twitter.png' %}" width="40px" height="40px">
-                        <img src="{% static 'img/youtube.png' %}" width="40px" height="40px">
-                        <img src="{% static 'img/insta.png' %}" width="40px" height="40px">
-        
-                    
-              
-                </div>
-        
-                </div>
-                <hr>
-                <p class="copyright">copyright-none</p>
-            </div>
-    <!-- -------------------------JAVASCRIPT FOR TOGGLE MENU-------------------------- -->
-    <script>
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const closeMenuBtn = document.querySelector('.close-menu-btn');
-        const navMenu = document.querySelector('.nav-menu');
-        const menuOverlay = document.querySelector('.menu-overlay');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        function closeMenu() {
-          navMenu.classList.remove('active');
-          menuOverlay.classList.remove('active');
-        }
-        
-        mobileMenuBtn.addEventListener('click', function() {
-          navMenu.classList.toggle('active');
-          menuOverlay.classList.toggle('active');
-        });
-        
-        closeMenuBtn.addEventListener('click', closeMenu);
-        menuOverlay.addEventListener('click', closeMenu);
-  
-        navLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const dropdown = this.nextElementSibling;
-            
-            navLinks.forEach(otherLink => {
-              if (otherLink !== this) {
-                const otherDropdown = otherLink.nextElementSibling;
-                if (otherDropdown) {
-                  otherDropdown.classList.remove('active');
-                }
-              }
-            });
-            
-            if (dropdown) {
-              dropdown.classList.toggle('active');
-            }
-          });
-        });
-      </script>
-    <script>
-        var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none"; 
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1} 
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 6000); // Change image every 5 seconds
-}
-
-    </script>
+{% block content %}
+<div class="form-container">
+  <h1 class="formhead">Admission Form</h1>
+  <form id="FORM" method="POST" action="{% url 'admission' %}">
+    {% csrf_token %}
+    <fieldset class="formfield">
+      <legend class="formlegend">1. Student Information</legend>
+      <label class="formlabel">Class of Admission: <input class="forminput" type="text" name="class_admission"
+          id="class_admission" required></label>
+      <label class="formlabel">Name (as on Aadhaar): <input class="forminput" type="text" name="name" id="name"
+          required></label>
+      <label class="formlabel">Date of Birth: <input class="forminput" type="date" name="dob" id="dob" required></label>
+      <label class="formlabel">Gender:
+        <select class="formselect" name="gender" required>
+          <option>Boy</option>
+          <option>Girl</option>
+        </select>
+      </label>
+      <label class="formlabel">Place of Birth: <input class="forminput" type="text" id="place_of_birth"
+          name="place_of_birth" required></label>
+      <label class="formlabel">Nationality: <input class="forminput" type="text" id="nationality" name="nationality"
+          required></label>
+      <label class="formlabel">WhatsApp Number (Parent): <input class="forminput" type="number" id="p_number"
+          name="p_number" required></label>
+      <label class="formlabel">Aadhaar Number: <input class="forminput" type="text" id="aadhaar" name="aadhaar"></label>
+      <label class="formlabel">BPL Family:
+        <select class="formselect" id="bpl" name="bpl">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend class="formlegend">2. Parent / Guardian Information</legend>
+      <label class="formlabel">Father’s Name: <input class="forminput" type="text" id="father_name" name="father_name"
+          required></label>
+      <label class="formlabel">Father’s Mobile: <input class="forminput" type="number" id="father_number"
+          name="father_number" required></label>
+      <label class="formlabel">Father’s Occupation:
+        <select class="formselect" id="father_occupation" name="father_occupation">
+          <option>Agriculture Farmer</option>
+          <option>Laborer</option>
+          <option>Self-Employed</option>
+          <option>Private Job</option>
+          <option>Govt. Employee</option>
+          <option>Military Personnel</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label class="formlabel">Mother’s Name: <input class="forminput" type="text" id="mother_name" name="mother_name"
+          required></label>
+      <label class="formlabel">Mother’s Mobile: <input class="forminput" type="number" id="mother_number"
+          name="mother_number" required></label>
+      <label class="formlabel">Mother’s Occupation:
+        <select class="formselect" id="mother_occupation" name="mother_occupation">
+          <option>Housewife</option>
+          <option>Agriculture Farmer</option>
+          <option>Laborer</option>
+          <option>Self-Employed</option>
+          <option>Private Job</option>
+          <option>Govt. Employee</option>
+          <option>Military Personnel</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label class="formlabel">Annual Income (Rs): <input class="forminput" type="number" id="income"
+          name="income"></label>
+    </fieldset>
+    <fieldset>
+      <legend class="formlegend">3. Sibling Information</legend>
+      <label class="formlabel">Name: <input class="forminput" type="text" id="sibling_name1"
+          name="sibling_name1"></label>
+      <label class="formlabel">Class: <input class="forminput" type="text" id="sibling_class1"
+          name="sibling_class1"></label>
+      <label class="formlabel">Relation:
+        <select class="formselect" id="sibling_relation1" name="sibling_relation1">
+          <option>Brother</option>
+          <option>Sister</option>
+        </select>
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend class="formlegend">4. Address Information</legend>
+      <label class="formlabel">Correspondence Address: <input class="forminput" type="text" id="address" name="address"
+          required></label>
+      <label class="formlabel">Distance from School (km): <input class="forminput" type="number" id="distance"
+          name="distance" required></label>
+      <label class="formlabel">City: <input class="forminput" type="text" id="city" name="city" required></label>
+      <label class="formlabel">District: <input class="forminput" type="text" id="district" name="district"
+          required></label>
+      <label class="formlabel">State: <input class="forminput" type="text" id="state" name="state" required></label>
+      <label class="formlabel">Pin Code: <input class="forminput" type="text" id="pincode" name="pincode"
+          required></label>
+    </fieldset>
+    <fieldset>
+      <legend class="formlegend">5. Reservation Info</legend>
+      <label class="formlabel">Religion:
+        <select class="formselect" id="religion" name="religion" required>
+          <option>Hindu</option>
+          <option>Christian</option>
+          <option>Muslim</option>
+          <option>Buddhist</option>
+          <option>Sikh</option>
+          <option>Jain</option>
+          <option>Parsi</option>
+        </select>
+      </label>
+      <label class="formlabel">Category:
+        <select class="formselect" id="category" name="category">
+          <option>General</option>
+          <option>ST</option>
+          <option>SC</option>
+          <option>OBC-A</option>
+          <option>OBC-B</option>
+        </select>
+      </label>
+    </fieldset>
+    <button class="formbutton" type="submit">Submit Application</button>
+  </form>
+</div>
+{% endblock %}
 </body>
 </html>
-
